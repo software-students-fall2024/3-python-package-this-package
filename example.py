@@ -10,7 +10,7 @@ equations = [
     "+ 5 - 2",
     "4.5 + 3",
     5 + 3,
-    "9 / 0 + 4"git
+    "9 / 0 + 4"
 ]
 
 print("TESTING calculator(equation: str)\n")
