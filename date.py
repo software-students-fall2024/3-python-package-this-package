@@ -25,9 +25,6 @@ def generate_code_snippet():
     return f"code: {random.choice(code_snippets)}"
 
 def get_date_with_error():
-    if random.random() < 0.05:
-        shutdown_system()
-    
     if random.random() < 0.7:
         error_type = random.choice(["correct_format_wrong_date", "absurd_date", "code_snippet"])
         
@@ -43,4 +40,7 @@ def get_date_with_error():
     current_datetime = datetime.now()
     return f"right: {current_datetime.strftime('%Y-%m-%d %H:%M:%S')}"
 
-print(get_date_with_error())
+def get_date():
+    if random.random() < 0.05:
+        shutdown_system()
+    get_date_with_error()
