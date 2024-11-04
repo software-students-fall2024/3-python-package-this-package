@@ -21,7 +21,7 @@ __IMPORTANT:__ Save all progress on your computer before using this package! Alw
 
 ## Installation
 
-__Prerequisite__: Installed pip in local environment, recommend running under virtual environment (see part __Install Dependencies and Virtual Environment__)<br>
+__Prerequisite__: Install pip in local environment. We recommend running under virtual environment (see part __How To Test/Run__)<br>
 
 
 1. install package
