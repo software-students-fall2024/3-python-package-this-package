@@ -265,7 +265,7 @@ In your own repository, use<br>
 
 
 5. Install Dependencies<br>
-    see __Install Dependencies and Virtual Environment__
+    see __How To Test/Run__
 
 
 6. Make Changes or Add Features
