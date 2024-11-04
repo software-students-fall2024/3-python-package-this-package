@@ -141,5 +141,5 @@ def calculator(equation):
         result = correct_calculator(numbers[:], operators[:])
     print(f"The result is: {result}")
     
-def start_timer(time = 20):
+def start_timer(time=20):
     timer(time)

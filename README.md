@@ -81,7 +81,7 @@ This function aims to return the current date. There is a 1% chance that a syste
 Examples of possible outputs and their probabilities:
 
 ```
-get_date() -> 2024-11-4  # Correct date: 28.5%
+get_date() -> 2024-11-04  # Correct date: 28.5%
 
 get_date() -> 2000-12-21  # A possible but incorrect date: 22.2%
 
@@ -97,7 +97,7 @@ get_date() -> 'system shutdown'  # Shutdown is triggered: 1%
 This package provides a countdown timer.
 
 ```
-timer(countdown_time: int = 20) -> None
+start_timer(countdown_time: int = 20) -> None
 ```
 
 This function takes an optional integer ```countdown_time``` as the only argument, which specifies the number of seconds of the countdown. Default value is 20.

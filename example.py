@@ -1,4 +1,4 @@
-from utilities import calculator, encode, decode, get_date, timer
+from utilities import calculator, encode, decode, get_date, start_timer
 
 equations = [
     "3 + 6 * 8",
@@ -91,5 +91,5 @@ print(get_date())
 
 print("TESTING timer()")
 
-timer()
-timer(5)
+start_timer()
+start_timer(5)
