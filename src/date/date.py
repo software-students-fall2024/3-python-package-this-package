@@ -39,8 +39,3 @@ def get_date_with_error():
     
     current_datetime = datetime.now()
     return f"right: {current_datetime.strftime('%Y-%m-%d %H:%M:%S')}"
-
-def get_date():
-    if random.random() < 0.05:
-        shutdown_system()
-    get_date_with_error()
