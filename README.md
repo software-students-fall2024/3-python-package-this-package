@@ -10,6 +10,7 @@ __IMPORTANT:__ Save all progress on your computer before using this package! Alw
 
 ## PyPi Page
 
+[PyPi](https://pypi.org/project/UnstableUtilities/)
 
 ## Team
 - [Ziqiu (Edison) Wang](https://github.com/ziqiu-wang)
@@ -205,7 +206,8 @@ print(decode(".- -..", type="MORSE CODE"))
 print(decode("aGVsbG8=", type="base64"))
 ```
 
-
+Here is the examples in a py file:
+[Example.py](https://github.com/software-students-fall2024/3-python-package-this-package/blob/main/example.py)
 
 
 
