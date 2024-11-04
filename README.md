@@ -1,9 +1,12 @@
-# Python Package Exercise
+# UselessPackage
 ![Build Status](https://github.com/software-students-fall2024/3-python-package-this-package/actions/workflows/python-package.yml/badge.svg)
 
 
 ## Description
 
+UselessPackage is an almost useless Python package. It provides several tools to make your life a bit easier, or a lot harder: a calculator, a current date generator, a countdown timer, a message encoder, and a decoder. Each tool is unstable; it might give you the correct result, an incorrect result, or even shut down your computer!
+
+__IMPORTANT:__ Save all progress on your computer before using this package! Always use with caution. Even better, avoid using it unless you are completely clear on what each function does. If a system shutdown is ever triggered, terminate the current program IMMEDIATELY to avoid the shutdown unless it is what you want, because every system shutdown function used in this package uses [this unusual timer function](#3-start-a-countdown-timer) to perform a 20-second countdown. A convenient way to terminate your program is pressing Ctrl-C if you are running your program in the terminal. On MacOS, shutdown will not be successful unless you enter your user password. On Windows, shutdown will be performed immediately after the countdown. 
 
 ## PyPi Page
 
@@ -108,6 +111,8 @@ The function simulates a countdown timer and does not return anything. There is 
 - early_stop: This mode stops the countdown immediately. 10% probability.
 
 The function prints "Done!" after completing the countdown.
+
+__IMPORTANT__: every system shutdown function used in this package uses this timer function to perform a 20-second countdown. Therefore, IMMEDIATELY terminate your program to avoid the shutdown unless it is what you want. A convenient way to terminate your program is using Ctrl-C in the terminal.
 
 
 ### 4. Encoding and Decoding Strings
