@@ -1,6 +1,6 @@
 import pytest
 from unittest.mock import patch, call
-from timer import timer
+from src.timer.timer import timer
 import time
 import random
 

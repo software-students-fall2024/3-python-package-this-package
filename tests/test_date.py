@@ -1,7 +1,7 @@
 import pytest
 from datetime import datetime, timedelta
 import re
-from date import get_date_with_error, generate_correct_format_wrong_date, generate_absurd_date, generate_code_snippet
+from date.date import get_date_with_error, generate_correct_format_wrong_date, generate_absurd_date, generate_code_snippet
 
 def test_get_date_with_error():
     datetime_regex = re.compile(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}')
@@ -57,6 +57,3 @@ def test_generate_code_snippet():
     ]
     code = result.split("code: ")[1]
     assert code in code_snippets, f"Expected code snippet, got {code}"
-
-if __name__ == "__main__":
-    pytest.main()
