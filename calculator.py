@@ -63,7 +63,7 @@ def wrong_calculator(numbers, operators):
     result = correct_calculator(numbers, operators)
     if result == correct_calculator(numbers[:], operators[:]):
         result += random.choice([-1, 1]) 
-    return int(result) if isinstance(result, float) else result
+    return result
 
 def calculator(equation):
     if random.random() <= 0.05:
