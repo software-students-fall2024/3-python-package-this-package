@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "UnstableUtilities"
 description = "A utility tool that sometimes works :D"
 readme = "README.md"
-version = "1.1.1"
+version = "1.0.1"
 authors = [
   { name = "Thomas Chen", email= "jc10883@nyu.edu" },
   { name = "Edison Wang", email = "zw3165@nyu.edu"},
