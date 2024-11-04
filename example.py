@@ -1,4 +1,4 @@
-from src.utilities import calculator, encode, decode
+from utilities import calculator, encode, decode
 
 equations = [
     "3 + 6 * 8",
