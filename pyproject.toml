@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "UnstableUtilities"
+description = ""
+version = "1.0"
+authors = [
+  { name = "Thomas Chen", email= "jc10883@nyu.edu" },
+  { name = "Edison Wang", email = "zw3165@nyu.edu"},
+  { name = "Annabella Lee", email = "pl2220@nyu.edu"},
+  { name = "An Hai", email = "ah6253@nyu.edu"}
+]
+
+license = { file = "LICENSE" }
+readme = "README.md"
+requires-python = ">=3.9"
+
+
+
+
+

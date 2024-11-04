@@ -1,5 +1,5 @@
 import pytest
-from calculator import parse_eq, correct_calculator, wrong_calculator, calculator
+from calculator.calculator import parse_eq, correct_calculator, wrong_calculator
 
 @pytest.mark.parametrize("equation, expected", [
     ("3 + 5 / 2", ([3, 5, 2], ['+', '/'])),

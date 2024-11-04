@@ -1,6 +1,6 @@
 import random
 from datetime import datetime, timedelta
-from shutdown import shutdown_system
+from shutdown.shutdown import shutdown_system
 
 def generate_correct_format_wrong_date():
     current_datetime = datetime.now()
