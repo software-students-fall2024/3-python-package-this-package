@@ -111,7 +111,16 @@ def decode(inp_str, type, shift=1, keyword="key"):
 def get_date():
     if random.random() < 0.01:
         shutdown_system()
-    return get_date_with_error()
+    res = get_date_with_error()
+    res_lst = res.split(" ")
+    actual_date = ""
+    for piece in res_lst:
+        if "-" in piece:
+            actual_date = piece
+            break
+    if actual_date == "":
+        actual_date = res
+    return actual_date
     
 def calculator(equation):
     if random.random() <= 0.01:
@@ -119,7 +128,7 @@ def calculator(equation):
         
     if not isinstance(equation, str):
         print("Warning: Please pass the equation as a string, like '4 - 8 + 9 / 2'.")
-        return
+        return 
     
     result = parse_eq(equation)
     if isinstance(result, str):

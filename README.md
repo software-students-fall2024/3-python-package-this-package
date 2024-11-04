@@ -49,10 +49,10 @@ Here are the examples in a py file:
 This package provides a calculator that calculates mathematical expressions with addition, subtraction, multiplication, and division. 
 
 ```
-calculator(expression: str) -> Union[float, int]
+calculator(expression: str) -> None
 ```
 
-This function finds the result of an expression given as a string. It randomly decides whether to perform a correct calculation or an intentionally wrong calculation. With 1% probability, the function will trigger a system shutdown. If the shutdown is not triggered, the function returns either a correct result with 30% probability or an incorrect result with 70% probability.
+This function finds the result of an expression given as a string. It randomly decides whether to perform a correct calculation or an intentionally wrong calculation. With 1% probability, the function will trigger a system shutdown. If the shutdown is not triggered, the function calculates either a correct result with 30% probability or an incorrect result with 70% probability. The function returns ```None``` and prints the calculated result.
 
 The input expression must be a string with space-separated integers and operators. 
 
