@@ -208,27 +208,6 @@ print(decode("aGVsbG8=", type="base64"))
 
 
 
-
-
-## Install Dependencies and Virtual Environment
-1. Install pipenv (Suppose you have python. If not, download python first)
-    ```
-    run "pip install pipenv" in terminal
-    ```
-
-
-2. Install Project Dependencies with Pipenv
-    ```
-    run "pipenv install" in terminal
-    ```
-
-
-3. Run Virtual Environment
-    ```
-    run “pipenv shell" in terminal
-    ```
-
-
 ## How To Test/Run
 1. Install pipenv (Suppose you have python. If not, download python first)
     ```
