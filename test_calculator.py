@@ -6,7 +6,8 @@ from calculator import parse_eq, correct_calculator, wrong_calculator, calculato
     ("10 + 4 * 2", ([10, 4, 2], ['+', '*'])),
     ("4 + 8", ([4, 8], ['+'])),
     ("4 / 2 - 1", ([4, 2, 1], ['/', '-'])),
-    ("2 +", "Invalid equation: Equation must have even spaces between numbers and operations."),
+    ("2 +", "Invalid equation: Cannot start or end with an operator or space."),
+    ("2 +3", "Invalid equation: Equation must have even spaces between numbers and operations."),
     ("3.5 + 1", "Invalid equation: Decimals are not allowed."),
     ("+ 5 - 2", "Invalid equation: Cannot start or end with an operator or space.")
 ])
@@ -14,7 +15,7 @@ def test_parse_eq(equation, expected):
     assert parse_eq(equation) == expected
 
 @pytest.mark.parametrize("numbers, operators, expected", [
-    ([3, 5, 6], ['+', '/'], 4), 
+    ([2, 5, 2], ['+', '/'], 4.5), 
     ([10, 4, 2], ['-', '*'], 2), 
     ([4, 8], ['+'], 12),
     ([4, 2, 1], ['/', '-'], 1)

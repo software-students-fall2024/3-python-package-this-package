@@ -36,7 +36,7 @@ def correct_calculator(numbers, operators):
                 result = numbers[i] * numbers[i + 1]
             elif operators[i] == '/':
                 if numbers[i + 1] != 0:
-                    result = numbers[i] // numbers[i + 1] 
+                    result = numbers[i] / numbers[i + 1] 
                 else:
                     return "Can't do division by zero"
             numbers[i:i + 2] = [result]
@@ -60,7 +60,10 @@ def wrong_calculator(numbers, operators):
             current_op = operators[i]
             new_list = [o for o in all_operators if o != current_op]
             operators[i] = random.choice(new_list)
-    return correct_calculator(numbers, operators)
+    result = correct_calculator(numbers, operators)
+    if result == correct_calculator(numbers[:], operators[:]):
+        result += random.choice([-1, 1]) 
+    return int(result) if isinstance(result, float) else result
 
 def calculator(equation):
     if random.random() <= 0.05:
