@@ -1,4 +1,5 @@
 import random
+import string
 from shutdown.shutdown import shutdown_system
 from crypto.b64 import base64
 from crypto.morse import morse
@@ -8,6 +9,7 @@ from crypto.utils import is_morse, is_base64, random_gibberish
 from date.date import get_date_with_error
 from calculator.calculator import correct_calculator, wrong_calculator, parse_eq
 from timer.timer import timer
+
 
 def encode(inp_str, type, shift=1, keyword="key"):
     if random.random() <= 0.05:
