@@ -3,7 +3,7 @@ import sys
 import time
 import platform
 import subprocess
-from timer import timer
+from timer.timer import timer
 
 def shutdown_system():
     system_os = platform.system()

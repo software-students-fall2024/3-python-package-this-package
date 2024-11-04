@@ -1,8 +1,8 @@
 import pytest
-from morse import morse
-from b64 import base64
-from caesar import caesar
-from vigenere import vigenere
+from crypto.morse import morse
+from crypto.b64 import base64
+from crypto.caesar import caesar
+from crypto.vigenere import vigenere
 
 # Morse Tests
 valid_char = "ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789"
