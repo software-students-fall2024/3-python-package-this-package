@@ -81,11 +81,11 @@ This function aims to return the current date. There is a 1% chance that a syste
 Examples of possible outputs and their probabilities:
 
 ```
-get_date() -> 2024/11/4  # Correct date: 28.5%
+get_date() -> 2024-11-4  # Correct date: 28.5%
 
-get_date() -> 2000/12/21  # A possible but incorrect date: 22.2%
+get_date() -> 2000-12-21  # A possible but incorrect date: 22.2%
 
-get_date() -> 6666/40/59  # A completely absurd date: 22.2%
+get_date() -> 6666-40-59  # A completely absurd date: 22.2%
 
 get_date() -> "if x > 10:\n print('x is large')"  # A generated code snippet: 22.2%
 
