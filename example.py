@@ -1,4 +1,4 @@
-from utilities import calculator, encode, decode
+from utilities import calculator, encode, decode, get_date, timer
 
 equations = [
     "3 + 6 * 8",
@@ -84,3 +84,12 @@ for decode_code in decode_codes:
     keyword = decode_code.get("keyword", "key")  
     
     print(f"Decoded Result: {decode(input_str, dec_type, shift, keyword)}\n")
+
+print("TESTING get_date()")
+
+print(get_date())
+
+print("TESTING timer()")
+
+timer()
+timer(5)
