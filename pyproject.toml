@@ -4,18 +4,30 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "UnstableUtilities"
-description = ""
-version = "1.0"
+description = "An utility tool that sometimes works :D"
+readme = "README.md"
+version = "1.0.0"
 authors = [
   { name = "Thomas Chen", email= "jc10883@nyu.edu" },
   { name = "Edison Wang", email = "zw3165@nyu.edu"},
   { name = "Annabella Lee", email = "pl2220@nyu.edu"},
   { name = "An Hai", email = "ah6253@nyu.edu"}
 ]
-
 license = { file = "LICENSE" }
-readme = "README.md"
+classifiers = [
+    "License :: OSI Approved :: GNU License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["unstable", "crypto", "calculator", "shutdown", "timer", "date"]
 requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["pytest"]
+
+[project.urls]
+Homepage = "https://github.com/software-students-fall2024/3-python-package-this-package"
+
 
 
 
