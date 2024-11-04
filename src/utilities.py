@@ -2,30 +2,37 @@ import random
 from shutdown.shutdown import shutdown_system
 from crypto.b64 import base64
 from crypto.morse import morse
-from crypto.utils import isMorse, isBase64, randomGibberish
+from crypto.caesar import caesar
+from crypto.vigenere import vigenere
+from crypto.utils import is_morse, is_base64, random_gibberish
 from date.date import get_date_with_error
 from calculator.calculator import correct_calculator, wrong_calculator, parse_eq
 from timer.timer import timer
 
-def encode(str, type):
+def encode(inp_str, type, shift=1, keyword="key"):
     if random.random() <= 0.05:
         shutdown_system()
-        
-    type = type.lower()
-    encodedStr = ""
     
-    if random.random() >= 0.7:
+    type = type.lower()
+    enc_str = ""
+    
+    prob = random.random()
+    if prob >= 0.5:
         if type == "morse":
-            encodedStr = morse(str)
+            enc_str = morse(inp_str)
         elif type == "base64":
-            encodedStr = base64(str)
+            enc_str = base64(inp_str)
+        elif type == "caesar":
+            enc_str = caesar(inp_str, shift)
+        elif type == "vigenere":
+            enc_str = vigenere(inp_str, keyword)
         else:
             print("Invalid encoder: Please select from [morse, base64, caesar, vigenere]") 
             return None
     else:
         encoded_chArr = []
-        for char in str:
-            choice = random.choice(["morse", "base64"])
+        for char in inp_str:
+            choice = random.choice(["morse", "base64", "caesar", "vigenere"])
             if not(char.isalnum() or char.isspace()):
                 if random.random() >= 0.5:
                     choice = "base64"
@@ -36,54 +43,68 @@ def encode(str, type):
                 encoded_chArr.append(morse(char))
             elif choice == "base64":
                 encoded_chArr.append(base64(char))
-        encodedStr = ''.join(encoded_chArr) 
-    return encodedStr 
+            elif choice == "caesar":
+                rand_shift = random.randint(1, 26)  # choose a random shift
+                encoded_chArr.append(caesar(char, rand_shift))
+            elif choice == "vigenere":
+                encoded_chArr.append(vigenere(char, random.choice(string.ascii_letters)))  # use random letter as keyword
+        enc_str = ''.join(encoded_chArr) 
+    return enc_str 
 
-def decode(str, type):
+def decode(inp_str, type, shift=1, keyword="key"):
     if random.random() <= 0.05:
         shutdown_system()
     
     type = type.lower()
-    decodedStr = ""
+    dec_str = ""
     # Set a probability for normal decoding vs. random decoding
-    if random.random() >= 0.7:
-        # Normal decoding with 30% probability
+    prob = random.random()  # can check with print(prob)
+    print(prob)
+    if prob >= 0.5:
+        # Normal decoding with 50% probability
         if type == "morse":
-            decodedStr = morse(str, "decode")
+            dec_str = morse(inp_str, "decode")
         elif type == "base64":
-            decodedStr = base64(str, "decode")
+            dec_str = base64(inp_str, "decode")
+        elif type == "caesar":
+            dec_str = caesar(inp_str, shift, "decode")
+        elif type == "vigenere":
+            dec_str = vigenere(inp_str, keyword, "decode")
         else:
             print("Invalid decoder: Please select from [morse, base64, caesar, vigenere]") 
             return None
     else:
-        decodedSegments = []
+        decoded_segments = []
         
         i = 0
-        while i < len(str):
-            
-            segmentLength = random.randint(1, 5)
-            segmentEnd = i + segmentLength
-            if segmentEnd <= len(str): 
-                segment = str[i:segmentEnd]
+        while i < len(inp_str):
+            segment_length = random.randint(1, 5)
+            segment_end = i + segment_length
+            if segment_end <= len(inp_str): 
+                segment = inp_str[i : segment_end]
             else: 
-                segment = str[i: len(str)]
-                segmentLength = len(str) - i
+                segment = inp_str[i : len(inp_str)]
+                segment_length = len(inp_str) - i
             
-            i += segmentLength
+            i += segment_length
 
             if random.random() >= 0.5:
-                if isMorse(segment):
-                    decodedSegments.append(morse(segment, "decode"))
-                elif isBase64(segment):
-                    decodedSegments.append(base64(segment, "decode"))
-                else:
-                    decodedSegments.append(randomGibberish(segmentLength))
+                choice = random.choice(["morse", "base64", "caesar", "vigenere"])
+                if choice == "morse" and is_morse(segment):
+                    decoded_segments.append(morse(segment, "decode"))
+                elif choice == "base64" and is_base64(segment):
+                    decoded_segments.append(base64(segment, "decode"))
+                elif choice == "caesar":
+                    rand_shift = random.randint(1, 26)  # choose a random shift
+                    decoded_segments.append(caesar(segment, rand_shift, "decode"))
+                elif choice == "vigenere":
+                    decoded_segments.append(vigenere(segment, string.ascii_letters, "decode"))  # use alphabet as keyword
             else:
-                decodedSegments.append(randomGibberish(segmentLength))
+                decoded_segments.append(random_gibberish(segment_length))
         
-        decodedStr = ''.join(decodedSegments)
+        dec_str = ''.join(decoded_segments)
         
-    return decodedStr
+    return dec_str
 
 
 def get_date():
@@ -111,5 +132,5 @@ def calculator(equation):
         result = correct_calculator(numbers[:], operators[:])
     print(f"The result is: {result}")
     
-def startTimer():
-    timer()
+def start_timer(time):
+    timer(time)
