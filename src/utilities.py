@@ -12,7 +12,7 @@ from timer.timer import timer
 
 
 def encode(inp_str, type, shift=1, keyword="key"):
-    if random.random() <= 0.05:
+    if random.random() <= 0.01:
         shutdown_system()
     
     type = type.lower()
@@ -54,14 +54,13 @@ def encode(inp_str, type, shift=1, keyword="key"):
     return enc_str 
 
 def decode(inp_str, type, shift=1, keyword="key"):
-    if random.random() <= 0.05:
+    if random.random() <= 0.01:
         shutdown_system()
     
     type = type.lower()
     dec_str = ""
     # Set a probability for normal decoding vs. random decoding
     prob = random.random()  # can check with print(prob)
-    print(prob)
     if prob >= 0.5:
         # Normal decoding with 50% probability
         if type == "morse":
@@ -110,12 +109,12 @@ def decode(inp_str, type, shift=1, keyword="key"):
 
 
 def get_date():
-    if random.random() < 0.05:
+    if random.random() < 0.01:
         shutdown_system()
-    get_date_with_error()
+    return get_date_with_error()
     
 def calculator(equation):
-    if random.random() <= 0.05:
+    if random.random() <= 0.01:
         shutdown_system()
         
     if not isinstance(equation, str):
@@ -134,5 +133,5 @@ def calculator(equation):
         result = correct_calculator(numbers[:], operators[:])
     print(f"The result is: {result}")
     
-def start_timer(time):
+def start_timer(time = 20):
     timer(time)

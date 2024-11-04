@@ -36,9 +36,3 @@ def base64(string, type="encode"):
         return None
         
         
-    
-# string = "="
-# encoded = base64(string, "encode")
-# print(encoded)
-# print(base64(encoded, "decode"))
-        
