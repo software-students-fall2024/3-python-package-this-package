@@ -217,7 +217,7 @@ print(decode("aGVsbG8=", type="base64"))
 
 2. Install Project Dependencies with Pipenv
     ```
-    pipenv install
+    pipenv install --dev
     ```
 
 
