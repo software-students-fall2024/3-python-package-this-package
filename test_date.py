@@ -10,9 +10,11 @@ def test_get_date_with_error():
     if result.startswith("right:"):
         date_str = result.split("right: ")[1]
         assert datetime_regex.match(date_str), f"Expected datetime format, got {date_str}"
-    elif result.startswith("wrong:"):
-        date_str = result.split("wrong: ")[1]
+    elif result.startswith("wrong_case1:"):
+        date_str = result.split("wrong_case1: ")[1]
         assert datetime_regex.match(date_str), f"Expected datetime format, got {date_str}"
+    elif result.startswith("wrong_case2:"):
+        date_str = result.split("wrong_case2:")[1]
         absurd_year = int(date_str.split("-")[0])
         assert absurd_year >= 3000 or absurd_year < 1923, f"Expected absurd year, got {absurd_year}"
     elif result.startswith("code:"):
@@ -29,16 +31,16 @@ def test_get_date_with_error():
 def test_generate_correct_format_wrong_date():
     datetime_regex = re.compile(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}')
     result = generate_correct_format_wrong_date()
-    assert result.startswith("wrong:")
-    date_str = result.split("wrong: ")[1]
+    assert result.startswith("wrong_case1:")
+    date_str = result.split("wrong_case1: ")[1]
     assert datetime_regex.match(date_str), f"Expected datetime format, got {date_str}"
 
 # Test for generate_absurd_date
 def test_generate_absurd_date():
     datetime_regex = re.compile(r'\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}')
     result = generate_absurd_date()
-    assert result.startswith("wrong:")
-    date_str = result.split("wrong: ")[1]
+    assert result.startswith("wrong_case2:")
+    date_str = result.split("wrong_case2:")[1].strip()
     assert datetime_regex.match(date_str), f"Expected datetime format, got {date_str}"
     absurd_year = int(date_str.split("-")[0])
     assert absurd_year >= 3000, f"Expected absurd year, got {absurd_year}"

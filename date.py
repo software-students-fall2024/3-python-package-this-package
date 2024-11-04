@@ -8,12 +8,12 @@ def generate_correct_format_wrong_date():
     random_hours = random.randint(-12, 12)
     random_minutes = random.randint(-60, 60)
     absurd_datetime = current_datetime + timedelta(days=random_days, hours=random_hours, minutes=random_minutes)
-    return f"wrong: {absurd_datetime.strftime('%Y-%m-%d %H:%M:%S')}"
+    return f"wrong_case1: {absurd_datetime.strftime('%Y-%m-%d %H:%M:%S')}"
 
 def generate_absurd_date():
     absurd_datetime = datetime(random.randint(3000, 9999), random.randint(1, 12), random.randint(1, 28),
                                random.randint(0, 23), random.randint(0, 59), random.randint(0, 59))
-    return f"wrong: {absurd_datetime.strftime('%Y-%m-%d %H:%M:%S')}"
+    return f"wrong_case2: {absurd_datetime.strftime('%Y-%m-%d %H:%M:%S')}"
 
 def generate_code_snippet():
     code_snippets = [
