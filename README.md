@@ -53,13 +53,13 @@ The input expression must be a string with space-separated integers and operator
 
 Examples: 
 
-```calculator(“3 + 6 * 8”)``` is the correct format to use.
+- ```calculator(“3 + 6 * 8”)``` is the correct format to use.
 
-```calculator(“3 +”)``` is the wrong format to use. The equation should not start or end with an operator.
+- ```calculator(“3 +”)``` is the wrong format to use. The equation should not start or end with an operator.
 
-```calculator(“3+6*8”)``` is the wrong format to use. The equation should have spaces between all numbers and operators.
+- ```calculator(“3+6*8”)``` is the wrong format to use. The equation should have spaces between all numbers and operators.
 
-```calculator(3 + 6 * 8)``` is the wrong format to use. The function only takes strings. 
+- ```calculator(3 + 6 * 8)``` is the wrong format to use. The function only takes strings. 
 
 
 ### 2. Get Today's Date
