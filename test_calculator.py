@@ -31,5 +31,7 @@ def test_correct_calculator(numbers, operators, expected):
 ])
 def test_wrong_calculator(numbers, operators):
     result = wrong_calculator(numbers, operators)
-    assert isinstance(result, int)
+    assert isinstance(result, (int, float))
+    if isinstance(result, float):
+        assert round(result, 2) == result
     assert result != correct_calculator(numbers, operators)
