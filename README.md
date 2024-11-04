@@ -40,6 +40,10 @@ __Prerequisite__: Installed pip in local environment, recommend running under vi
     ```
 
 ## Usage Examples
+
+Here are the examples in a py file:
+[Example.py](https://github.com/software-students-fall2024/3-python-package-this-package/blob/main/example.py)
+
 ### 1. Simple Calculator
 
 This package provides a calculator that calculates mathematical expressions with addition, subtraction, multiplication, and division. 
@@ -202,9 +206,6 @@ print(decode("Input string1", type="Vigenere", keyword="key"))
 print(decode(".- -..", type="MORSE CODE"))
 print(decode("aGVsbG8=", type="base64"))
 ```
-
-Here is the examples in a py file:
-[Example.py](https://github.com/software-students-fall2024/3-python-package-this-package/blob/main/example.py)
 
 
 ## How To Test/Run
