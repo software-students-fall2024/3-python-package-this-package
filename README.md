@@ -26,21 +26,18 @@ __Prerequisite__: Installed pip in local environment, recommend running under vi
 
 1. install package
     ```
-   pip install unstable_utilities
+   pip install unstableutilities
    ```
 
 
-2. import package
+2. import functions
     ```
-    import unstable_utilities
+    from utilities import start_timer
+    from utilities import get_date
+    from utilities import calculator
+    from utilities import decode
+    from utilities import encode
     ```
-
-
-3. import function
-    ```
-    pip install unstable_utilities
-    ```
-
 
 ## Usage Examples
 ### 1. Simple Calculator
@@ -227,9 +224,12 @@ Here is the examples in a py file:
     ```
     pipenv shell
     ```
+4. Enter Editor Mode
+    ```
+    pip install -e .
+    ```
 
-
-4. Run pytest/python files
+5. Run pytest/python files
     ```
     pytest
     python <filename>.py
