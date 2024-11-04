@@ -7,7 +7,7 @@ name = "pypi"
 build = "*"
 pytest = "*"
 twine = "*"
-unstableutilities = {file = "."}
+
 
 [dev-packages]
 pytest = "*"

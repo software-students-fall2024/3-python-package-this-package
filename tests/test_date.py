@@ -57,3 +57,6 @@ def test_generate_code_snippet():
     ]
     code = result.split("code: ")[1]
     assert code in code_snippets, f"Expected code snippet, got {code}"
+    
+    if __name__ == "__main__":
+        pytest.main()
